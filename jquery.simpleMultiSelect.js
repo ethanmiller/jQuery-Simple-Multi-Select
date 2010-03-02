@@ -1,6 +1,7 @@
-/* jQuery Simple Multi-Select plugin 1.0
+/* jQuery Simple Multi-Select plugin 1.0.1
  *
  * Copyright (c) 2009 Ethan Miller
+ * Modifications (c) 2010 Antti Kaihola
  *
  * http://ethanmiller.name/notes/jquery_simplemultiselect/
  *
@@ -15,8 +16,8 @@
         var settings = $.extend({
 		highlight : '#CCE',
 		border : '#777',
-		width : 350,
-		height : 150,
+		width : undefined,
+		height : undefined,
 		classesOnly : false,
 		container : 'sms-container',
 		pseudoSelect : 'sms-pseudo-select',
@@ -51,8 +52,10 @@
             });
             if(!settings.classesOnly){
                 divselect.css({
-                    width : settings.width,
-                    height : settings.height,
+                    fontSize : $(this).css('font-size'),
+                    fontFamily : $(this).css('font-family'),
+                    width : settings.width || $(this).width(),
+                    height : settings.height || $(this).height(),
                     cursor : "default",
                     overflow : "auto",
                     border : "1px solid " + settings.border
