@@ -1,4 +1,4 @@
-/* jQuery Simple Multi-Select plugin 0.9
+/* jQuery Simple Multi-Select plugin 1.0
  *
  * Copyright (c) 2009 Ethan Miller
  *
