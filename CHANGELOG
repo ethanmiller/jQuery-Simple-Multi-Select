@@ -1,0 +1,8 @@
+= 1.0.1 (pending) =
+* respect the dimensions and font family/size of the replaced <select> element
+
+= 1.0 (2009-10-10) =
+* added classOnly behavior
+
+= 0.9 (2009-09-10) =
+* initial commit
