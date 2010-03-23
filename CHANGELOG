@@ -1,5 +1,8 @@
-= 1.0.1 (pending) =
+= 1.1.1 (2010-03-23) =
 * respect the dimensions and font family/size of the replaced <select> element
+
+= 1.1 (2010-03-23) =
+* Added support for optgroup, and disabled options
 
 = 1.0 (2009-10-10) =
 * added classOnly behavior

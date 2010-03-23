@@ -16,8 +16,8 @@
         var settings = $.extend({
             highlight : '#CCE',
             border : '#777',
-			width : undefined,
-			height : undefined,
+            width : undefined,
+            height : undefined,
             classesOnly : false,
             container : 'sms-container',
             pseudoSelect : 'sms-pseudo-select',
