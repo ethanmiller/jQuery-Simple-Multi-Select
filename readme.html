@@ -65,8 +65,8 @@
     <pre class="code">
     <code class="javascript">
 $('select').simpleMultiSelect();
-    </pre>
     </code>
+    </pre>
 
     <p>All/none functions are also included:</p>
 
@@ -74,8 +74,8 @@ $('select').simpleMultiSelect();
     <code class="javascript">
 $('select').smsNone();
 $('select').smsAll();
-    </pre>
     </code>
+    </pre>
     <h2>Options</h2>
     <p>Default options shown below, override as needed ... </p>
     <pre class="code">
@@ -91,12 +91,12 @@ $('select').simpleMultiSelect({
     selected : 'sms-selected',
     unselected : 'sms-unselected'
 });
-    </pre>
     </code>
+    </pre>
     <h2>Example 1 : default functionality</h2>
     <select id="sel0" multiple="multiple">
         <option value="0">option one</option>
-        <option value="1">option dos</option>
+        <option value="1" selected disabled>option dos (disabled and selected)</option>
         <option value="2">option the third</option>
         <option value="3">option four which preceeds the fifth</option>
         <option selected value="4">option five</option>
@@ -143,12 +143,12 @@ $('select').simpleMultiSelect({
     selected : 'custom-select',
     unselected : 'custom-unselect'});
 });
-    </pre>
     </code>
+    </pre>
 
     <select id="sel1" multiple="multiple">
         <option value="0">option one</option>
-        <option value="1">option dos</option>
+        <option value="1" disabled>option dos (disabled)</option>
         <option value="2">option the third</option>
         <option value="3">option four which preceeds the fifth</option>
         <option selected value="4">option five</option>

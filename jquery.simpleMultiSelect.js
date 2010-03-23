@@ -30,7 +30,9 @@
             var divselect = $('<div class="' + settings.pseudoSelect + '"></div>');
             $('option', this).each(function(){
                 var op = $(this);
-                var dv = $('<div/>').text(op.text()).data('selected', op.attr('selected'));
+                var dv = $('<div/>')
+			 .text(op.text())
+			 .data('selected', op.attr('selected'));
 		// highlight pseudo option on load
 		toggleSelected(dv, settings);
                 dv.click(function(){
