@@ -7,42 +7,60 @@
   <script type="text/javascript">
       $(document).ready(function(){
         $('select#sel0').simpleMultiSelect();
+
         $('input#nada0').click(function(){
             $('select#sel0').smsNone();
         });
         $('input#todos0').click(function(){
             $('select#sel0').smsAll();
         });
-	$('select#sel1').simpleMultiSelect({
-	    classesOnly : true, 
-	    pseudoSelect : 'custom-select-box', 
-	    selected : 'custom-select',
-	    unselected : 'custom-unselect'});
-        $('input#nada1').click(function(){
-            $('select#sel1').smsNone();
-        });
-        $('input#todos1').click(function(){
-            $('select#sel1').smsAll();
-        });
-      });
+
+		$('select#sel1').simpleMultiSelect({
+			classesOnly : true, 
+			pseudoSelect : 'custom-select-box', 
+			selected : 'custom-select',
+			unselected : 'custom-unselect',
+			disabled : 'custom-disabled',
+			optgroup : 'custom-optgroup',
+			optgroupLabel : 'custom-optgroup-label'
+		});
+
+		$('input#nada1').click(function(){
+			$('select#sel1').smsNone();
+		});
+		$('input#todos1').click(function(){
+			$('select#sel1').smsAll();
+		});
+	});
   </script>
     <style>
 	div.custom-select-box{
-	    background-color:#CCC;
-	    padding:5px;
-	    width:400px;
-	    cursor:default;
-	    font-family: "arial", sans-serif;
-	    font-size:0.8em;
+		background-color:#CCC;
+		padding:5px;
+		width:400px;
+		cursor:default;
+		font-family: "arial", sans-serif;
+		font-size:0.8em;
 	}
 	div.custom-select-box div.custom-unselect{
-	    background-color:#EEE;
-	    padding:3px;
+		background-color:#EEE;
+		padding:3px;
 	}
 	div.custom-select-box div.custom-select{
-	    background-color:#FFF;
-	    padding:3px;
-	    font-weight:bold;
+		background-color:#FFF;
+		padding:3px;
+		font-weight:bold;
+	}
+	div.custom-select-box div.custom-disabled{
+		color:#844;
+	}
+	div.custom-select-box div.custom-optgroup{
+		padding:5px;
+	}
+	div.custom-select-box div.custom-optgroup-label{
+		background-color:#EE9;
+		padding:5px;
+		font-weight:bold;
 	}
     </style>
   <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 13), see www.w3.org">
@@ -51,10 +69,10 @@
 
 <body>
     <h1> jQuery Simple Multi-Select</h1>
-    <p>v 1.0 Oct 10 2009</p>
+    <p>v 1.1 Mar 23 2010</p>
     <p>This plugin replaces a standard multi-select with a simplified version that doesn't require ctrl+click to select multiple options. Each click simply toggles the given option on or off. The original multi-select is hidden, and a replacement is built. The original multi-select is updated on each click so that when when your form is submitted, you get what you expected.</p>
     <p>This plugin was inspired this <a href="http://tech.forumone.com/archives/135-JQuery-Multi-select-Box-Alternative.html">blog post by Matt Gibbs</a> - I just packaged it up into a plugin you can drop on your form.</p>
-    <p>This open source project is supported by <a href="http://energy-solution.com/">Energy Solutions</a>.</p>
+    <p>Initial development of this open source project was supported by <a href="http://energy-solution.com/">Energy Solutions</a>.</p>
     <h2>Requirements</h2>
     <ul>
         <li>jQuery 1.3+</li>
@@ -89,7 +107,10 @@ $('select').simpleMultiSelect({
     container : 'sms-container',
     pseudoSelect : 'sms-pseudo-select',
     selected : 'sms-selected',
-    unselected : 'sms-unselected'
+    unselected : 'sms-unselected',
+    disabled : 'sms-disabled',
+    optgroup : 'sms-optgroup',
+    optgroupLabel : 'sms-optgroup-label'
 });
     </code>
     </pre>
@@ -101,11 +122,13 @@ $('select').simpleMultiSelect({
         <option value="3">option four which preceeds the fifth</option>
         <option selected value="4">option five</option>
         <option value="5">option seis</option>
+		<optgroup label="Chinese now">
         <option selected value="6">option chi</option>
         <option value="7">option ba</option>
         <option value="8">option chiu</option>
         <option value="9">option shi</option>
         <option value="10">option shi yi</option>
+		</optgroup>
         <option value="11">option second to last</option>
         <option value="12">option the last</option>
     </select>
@@ -132,6 +155,17 @@ div.custom-select-box div.custom-select{
     padding:3px;
     font-weight:bold;
 }
+div.custom-select-box div.custom-disabled{
+    color:#844;
+}
+div.custom-select-box div.custom-optgroup{
+    padding:5px;
+}
+div.custom-select-box div.custom-optgroup-label{
+    background-color:#EE9;
+    padding:5px;
+    font-weight:bold;
+}
     </code>
     </pre>
     <p>And then override a few simpleMultiSelect options:</p>
@@ -141,7 +175,10 @@ $('select').simpleMultiSelect({
     classesOnly : true, 
     pseudoSelect : 'custom-select-box', 
     selected : 'custom-select',
-    unselected : 'custom-unselect'});
+    unselected : 'custom-unselect',
+    disabled : 'custom-disabled',
+    optgroup : 'custom-optgroup',
+    optgroupLabel : 'custom-optgroup-label'
 });
     </code>
     </pre>
@@ -153,11 +190,13 @@ $('select').simpleMultiSelect({
         <option value="3">option four which preceeds the fifth</option>
         <option selected value="4">option five</option>
         <option value="5">option seis</option>
+		<optgroup label="Chinese now">
         <option selected value="6">option chi</option>
         <option value="7">option ba</option>
         <option value="8">option chiu</option>
         <option value="9">option shi</option>
         <option value="10">option shi yi</option>
+		</optgroup>
         <option value="11">option second to last</option>
         <option value="12">option the last</option>
     </select>
