@@ -1,4 +1,5 @@
 /* jQuery Simple Multi-Select plugin 1.1.1
+ * vim:expandtab:tabstop=4 
  *
  * Copyright (c) 2009 Ethan Miller
  * Modifications (c) 2010 Antti Kaihola
@@ -98,7 +99,7 @@
                     subsel.css({'padding-left' : '10px'});
                     label.css({'font-weight' : 'bold'});
                 }
-                // recursive call here, using the same selector which meanse
+                // recursive call here, using the same selector which means
                 // nested optgroup's are supported - however, it doesn't render them 
                 // nested. I'm not sure why - but in any case it matches html 4
                 buildFauxOptions($('> option, > optgroup', this), settings, subsel);

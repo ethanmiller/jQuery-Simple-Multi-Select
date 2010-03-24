@@ -1,11 +1,11 @@
 = 1.1.1 (2010-03-23) =
-* respect the dimensions and font family/size of the replaced <select> element
+* Respect the dimensions and font family/size of the replaced <select> element
 
 = 1.1 (2010-03-23) =
 * Added support for optgroup, and disabled options
 
 = 1.0 (2009-10-10) =
-* added classOnly behavior
+* Added classOnly behavior
 
 = 0.9 (2009-09-10) =
-* initial commit
+* Initial commit
