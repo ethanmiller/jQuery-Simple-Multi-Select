@@ -1,0 +1,31 @@
+{
+    "name": "jquery.simple-multi-select",
+    "version": "1.1.2",
+    "title": "jQuery Simple Multi-Select",
+    "author": {
+        "name": "Ethan Miller",
+        "url": "http://ethanmiller.name"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        },
+        {
+            "type": "GPLv2",
+            "url": "http://www.gnu.org/licenses/gpl.html"
+        }
+    ],
+    "jquery": {
+        "dependencies": {
+            "jquery": ">=1.3"
+        }
+    },
+    "description": "This plugin replaces a standard multi-select with a simplified version that doesn't require ctrl+click to select multiple options. Each click simply toggles the given option on or off. The original multi-select is hidden, and a replacement is built. The original multi-select is updated on each click so that when when your form is submitted, you get what you expected.",
+    "keywords": [
+        "select",
+        "click",
+        "toggle"
+    ],
+    "homepage": "http://ethanmiller.name/notes/jquery_simplemultiselect/",
+}
