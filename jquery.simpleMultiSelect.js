@@ -1,5 +1,5 @@
-/* jQuery Simple Multi-Select plugin 1.1.1
- * vim:expandtab:tabstop=4 
+/* jQuery Simple Multi-Select plugin 1.1.2
+ * vim:expandtab:tabstop=4
  *
  * Copyright (c) 2009 Ethan Miller
  * Modifications (c) 2010 Antti Kaihola
@@ -29,7 +29,7 @@
             optgroupLabel : 'sms-optgroup-label'
         }, options);
         return this.each(function(){
-            // wrapping select in a div so that the select and 
+            // wrapping select in a div so that the select and
             // pseudo select will be siblings
             $(this).wrap('<div class="' + settings.container + '"></div>');
             var divselect = $('<div class="' + settings.pseudoSelect + '"></div>');
@@ -86,7 +86,7 @@
             }
         }
     }
-    function buildFauxOptions(elements, settings, divselect){ 
+    function buildFauxOptions(elements, settings, divselect){
         elements.each(function(){
             if(this.tagName == 'OPTGROUP'){
                 var subsel = $('<div/>');
@@ -100,31 +100,31 @@
                     label.css({'font-weight' : 'bold'});
                 }
                 // recursive call here, using the same selector which means
-                // nested optgroup's are supported - however, it doesn't render them 
+                // nested optgroup's are supported - however, it doesn't render them
                 // nested. I'm not sure why - but in any case it matches html 4
                 buildFauxOptions($('> option, > optgroup', this), settings, subsel);
                 divselect.append(subsel);
                 return true;
             }
             var op = $(this);
-            var disabled = op.attr('disabled');
+            var disabled = op.is(':disabled');
             var dv = $('<div/>')
                 .text(op.text())
-                .data('selected', op.attr('selected'))
+                .data('selected', op.is(':selected'))
                 .data('disabled', disabled);
             // highlight pseudo option on load
             toggleSelected(dv, settings);
             dv.click(function(){
                 if(disabled) return;
                 // we still have references to op and dv here ...
-                if(op.attr('selected')){
+                if(op.is(':selected')){
                     //de-select
                     op.removeAttr('selected');
                     dv.data('selected', false);
                     toggleSelected(dv, settings);
                 }else{
                     //select
-                    op.attr('selected', true);
+                    op.attr('selected', 'selected');
                     dv.data('selected', true);
                     toggleSelected(dv, settings);
                 }
